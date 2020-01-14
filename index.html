@@ -1,0 +1,59 @@
+<html>
+<body>
+    <form id="form">
+        <table width=35% >
+            <tr  width=30%>
+                <td>
+                    Nome
+                </td>
+                <td>
+                    <input type ="text" id="nome">
+                </td> 
+            </tr>
+            <tr>
+                <td>
+                    Cognome
+                </td>
+                <td>
+                    <input type = "text" id="cognome">
+                </td> 
+            </tr>
+        </table>
+    </form>
+    <button type="button" onclick="addUsers()">Conferma</button> 
+<script src="https://cdn.firebase.com/js/client/2.1.1/firebase.js"></script>
+<script>
+    function addUsers(){
+        var nomeUsr=document.getElementById("nome").value;
+        var cognomeUsr=document.getElementById("cognome").value;
+        var idUser = 4;
+        var usrId = new Firebase("https://test-68431.firebaseio.com/db/users/1/");
+        usrId.set({ nome: nomeUsr,cognome: cognomeUsr});
+    }
+</script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAjEOytGdHy0G7Kd4DoWAWebynSzNFDq_Q",
+    authDomain: "test-68431.firebaseapp.com",
+    databaseURL: "https://test-68431.firebaseio.com",
+    projectId: "test-68431",
+    storageBucket: "test-68431.appspot.com",
+    messagingSenderId: "640675693575",
+    appId: "1:640675693575:web:04fdeed6f1d7edfc3416a2",
+    measurementId: "G-XVV0919VVY"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+</body>
+</html>
